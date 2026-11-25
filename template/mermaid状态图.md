@@ -1,5 +1,5 @@
 ```mermaid
-%%elk%%
+
 ---
 title: 
 config:

@@ -98,7 +98,7 @@ SECC、EVCC、VACC 为固定不可配置地址。CAN 使用 29 位扩展帧、PD
 #### 版本协商
 ##### 充电机协议版本帧
 ```mermaid
-%%elk%%
+
 ---
 config:
     packet:
@@ -156,7 +156,7 @@ title 车辆协商结果帧
 充电机初始协商其支持的最高版本；车辆按支持情况回复成功、继续协商或失败。继续协商时双方依次尝试较低版本；无共同版本、CAN 类型不为 CAN2.0 或 5 s 超时，协商失败并退出充电过程。充电机在 S1 闭合后 1 s 内启动版本协商。依据：14.5.1、14.5.3 表 32、37、38。
 ##### 充电机版本协商状态转换图
 ```mermaid
-%%elk%%
+
 ---
 title: 充电机版本协商状态转换
 config:
@@ -185,7 +185,7 @@ stateDiagram-v2
 ```
 ##### 车辆版本协商状态转换图
 ```mermaid
-%%elk%%
+
 ---
 title: 车辆版本协商状态转换
 config:
@@ -385,7 +385,7 @@ title LM_EndofACK 长消息接收结束确认帧
 
 ##### 发送方状态转换图
 ```mermaid
-%%elk%%
+
 ---
 title: 发送方状态转换
 config:
@@ -451,7 +451,7 @@ stateDiagram-v2
 长消息数据长度为 9～1 785 字节；LMS_T1 应为 1～10 ms，LMS_T2 为 100 ms，LMS_T3 默认 10 000 ms（如应用层规定最大发送时间则按其规定）。连续出现 3 次同类型连接超时后发送 LM_NACK 并通知应用层发送失败。依据：GB/T 27930—2023 第 15.4.1、15.4.3.5 条。
 ##### 接收方状态转换图
 ```mermaid
-%%elk%%
+
 ---
 title: 接收方状态转换
 config:
@@ -812,7 +812,6 @@ title 车辆阶段确认报文
 
 ### 功能模块
 ```mermaid
-%%elk%%
 ---
 title: 基本充电场景
 ---
@@ -873,7 +872,6 @@ flowchart
 车辆结果参数组总长度为8字节（PGI 1字节+7个FDC各1字节）。依据：GB/T 27930—2023 附录C表C.4。
 ###### 充电机功能协商状态转换图
 ```mermaid
-%%elk%%
 ---
 title: 充电机功能协商状态转换
 config:
@@ -923,7 +921,6 @@ stateDiagram-v2
 ```
 ###### 车辆功能协商状态转换图
 ```mermaid
-%%elk%%
 ---
 title: 车辆功能协商状态转换
 config:
@@ -1017,7 +1014,6 @@ stateDiagram-v2
 | 电流              | 2BYTE | [[#CurrentType]]      | 车辆最小放电电流,无放电功能值位`0xFFFF`                               |
 ###### 充电机充电参数状态转换图
 ```mermaid
-%%elk%%
 ---
 title: 充电机充电参数状态转换
 config:
@@ -1068,7 +1064,6 @@ stateDiagram-v2
 ```
 ###### 车辆充电参数状态转换图
 ```mermaid
-%%elk%%
 ---
 title: 车辆充电参数状态转换
 config:
@@ -1181,7 +1176,6 @@ stateDiagram-v2
 充电机自检成功并确认直流回路接触器C1、C2断开后，才可完成阶段确认并进入下一FDC；该前置条件见 GB/T 27930—2023 附录G.2.1。
 
 ```mermaid
-%%elk%%
 ---
 title: 充电机通用系统自检状态转换
 config:
@@ -1269,7 +1263,6 @@ stateDiagram-v2
 ```
 ###### 车辆充电参数状态转换图
 ```mermaid
-%%elk%%
 ---
 title: 车辆充电参数状态转换
 config:
@@ -1425,7 +1418,6 @@ stateDiagram-v2
 | 暂停状态            | 1BYTE | [[#PauseStatusType]] | 车辆暂停充电通知  |
 ###### 充电机充电模式能量传输状态转换图
 ```mermaid
-%%elk%%
 ---
 title: 充电机充电模式能量传输状态转换
 config:
@@ -1581,7 +1573,7 @@ stateDiagram-v2
 
 ###### 车辆充电模式能量传输状态转换图
 ```mermaid
-%%elk%%
+
 ---
 title: 车辆充电模式能量传输状态转换
 config:
@@ -1754,7 +1746,7 @@ if_state_S3_ready-->S3:充电机未就绪(0x00),发送"车辆就绪状态_就绪
 | 电流              | 2BYTE | [[#CurrentType]]  | 充放电机放电电流测量值 |
 ###### 充放电机放电状态转换图
 ```mermaid
-%%elk%%
+
 ---
 title: 充放电机放电状态转换
 config:
